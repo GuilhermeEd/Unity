@@ -21,8 +21,8 @@ public class GameManager : MonoBehaviour {
 		}
 
 		if ( Input.GetKeyDown( KeyCode.P ) ) {
-			if ( isPaused ) { isPaused = false; ResumeGame(); }
-			else { isPaused = true; PauseGame(); }
+			if ( isPaused ) { ResumeGame(); }
+			else { PauseGame(); }
 		}
 
 	}
@@ -30,14 +30,16 @@ public class GameManager : MonoBehaviour {
 	void PauseGame() {
 		Time.timeScale = 0f;
 		Time.fixedDeltaTime = 0f;
+		isPaused = true;
 	}
 
 	void ResumeGame() {
 		Time.timeScale = 1f;
 		Time.fixedDeltaTime = initialFixedDeltaTime;
+		isPaused = false;
 	}
 
 	void OnApplicationPause( bool pauseStatus ) {
-		isPaused = pauseStatus;
+		if(pauseStatus) PauseGame();
 	}
 }
