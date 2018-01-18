@@ -27,5 +27,5 @@ public class MyNetworkManager : NetworkManager {
 	public void PrintDots(){
 		Debug.Log(".");
 	}
-
+	
 }
