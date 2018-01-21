@@ -4,33 +4,38 @@ using UnityEngine;
 
 public class Rocket : MonoBehaviour {
 
-	public float boosterPower = 20f;
-	public float rotationSensitivity = 80f;
+	[SerializeField] float boosterPower = 20f;
+	[SerializeField] float rotationSensitivity = 100f;
 
-	private Rigidbody rigidBody;
-	private AudioSource audioSource;
+	Rigidbody rb;
+	AudioSource audioSource;
 
 	void Start () {
-		rigidBody = GetComponent<Rigidbody>();
+		rb = GetComponent<Rigidbody>();
 		audioSource = GetComponent<AudioSource>();
 	}
 	
 	void Update () {
-		ProcessInput();
+		Thrust();
+		Rotate();
 	}
 
-	void ProcessInput () {
-		if ( Input.GetKey ( KeyCode.Space ) ) {
-			rigidBody.AddRelativeForce( Vector3.up * boosterPower );
-			if ( !audioSource.isPlaying ) audioSource.Play();
-		} else {
-			audioSource.Stop();
-		}
+  void Thrust () {
+    if (Input.GetKey(KeyCode.Space)) {
+      rb.AddRelativeForce(Vector3.up * boosterPower);
+      if (!audioSource.isPlaying) audioSource.Play();
+    } else audioSource.Stop();
 
-		if ( Input.GetKey ( KeyCode.A ) ) {
-			transform.Rotate( Vector3.forward * rotationSensitivity * Time.deltaTime );
-		} else if ( Input.GetKey ( KeyCode.D ) ) {
-			transform.Rotate( -Vector3.forward * rotationSensitivity * Time.deltaTime );
+    
+  }
+
+	void Rotate () {
+		if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)){
+			rb.freezeRotation = true; // take manual control of rotation
+			Vector3 rotation = Vector3.forward * rotationSensitivity * Time.deltaTime;
+			if (Input.GetKey(KeyCode.A)) transform.Rotate(rotation);
+			else if (Input.GetKey(KeyCode.D)) transform.Rotate(-rotation);
+			rb.freezeRotation = false; // resume physics control of rotation
 		}
 	}
 }
