@@ -7,10 +7,12 @@ public class Rocket : MonoBehaviour {
 	public float boosterPower = 20f;
 	public float rotationSensitivity = 80f;
 
-	private Rigidbody rb;
+	private Rigidbody rigidBody;
+	private AudioSource audioSource;
 
 	void Start () {
-		rb = GetComponent<Rigidbody>();
+		rigidBody = GetComponent<Rigidbody>();
+		audioSource = GetComponent<AudioSource>();
 	}
 	
 	void Update () {
@@ -19,7 +21,10 @@ public class Rocket : MonoBehaviour {
 
 	void ProcessInput () {
 		if ( Input.GetKey ( KeyCode.Space ) ) {
-			rb.AddRelativeForce( Vector3.up * boosterPower );
+			rigidBody.AddRelativeForce( Vector3.up * boosterPower );
+			if ( !audioSource.isPlaying ) audioSource.Play();
+		} else {
+			audioSource.Stop();
 		}
 
 		if ( Input.GetKey ( KeyCode.A ) ) {
