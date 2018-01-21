@@ -16,7 +16,7 @@ public class Platform : MonoBehaviour {
 			startTime = Time.time;
 			isMovingUp = true;
     }
-    void LateUpdate() {
+    void Update() {
         float t = (Time.time - startTime) / duration;
 				if ( isMovingUp ) {
         	transform.position = new Vector3(0f, Mathf.SmoothStep(startY, startY + range, t), 0f);

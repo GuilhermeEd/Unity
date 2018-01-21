@@ -20,19 +20,19 @@ public class Player : MonoBehaviour {
 		// Handle horizontal movement
 		if( Input.GetKey( KeyCode.RightArrow ) || Input.GetKey(KeyCode.D)){
 			if( Mathf.Abs ( rb.velocity.x ) < maxSpeed )	{
-				rb.AddForce( Vector3.right * acceleration * Time.deltaTime );
+				rb.AddForce( Vector3.right * acceleration );
 			}
 		}
 		if( Input.GetKey( KeyCode.LeftArrow ) || Input.GetKey(KeyCode.A) ){
 			if( Mathf.Abs ( rb.velocity.x ) < maxSpeed )	{
-				rb.AddForce( Vector3.left * acceleration * Time.deltaTime );
+				rb.AddForce( Vector3.left * acceleration );
 			}
 		}
 
 		// Handle jumps
 		if( ( Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)) ){
 			if ( !isJumping ) {
-				rb.AddForce( Vector3.up * jumpPower * Time.deltaTime );
+				rb.AddForce( Vector3.up * jumpPower );
 			}
 		}
 
