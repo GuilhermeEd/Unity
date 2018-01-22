@@ -581,8 +581,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66731a793b70da941a8d08dc6e765413, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boosterPower: 50
-  rotationSensitivity: 3000
+  boosterPower: 2500
+  rotationSensitivity: 300
   mainEngine: {fileID: 8300000, guid: 35e71581f344dee4b9d7d35d22829070, type: 3}
   death: {fileID: 8300000, guid: ada2df5c429b5434aa3e53e4d7e123e1, type: 3}
   success: {fileID: 8300000, guid: 18c8262f19d7dbf43a7546bcbbe0f524, type: 3}
