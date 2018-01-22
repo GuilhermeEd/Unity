@@ -82,7 +82,7 @@ public class Rocket : MonoBehaviour {
   }
 
   void Thrust () {
-    rigidBody.AddRelativeForce(Vector3.up * boosterPower);
+    rigidBody.AddRelativeForce(Vector3.up * boosterPower * Time.deltaTime);
     if (!audioSource.isPlaying) audioSource.PlayOneShot(mainEngine);
 		mainEngineParticles.Play();
   }
