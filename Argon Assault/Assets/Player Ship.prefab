@@ -9,45 +9,45 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1000013772491214}
+  m_RootGameObject: {fileID: 1946062428747084}
   m_IsPrefabParent: 1
---- !u!1 &1000013772491214
+--- !u!1 &1946062428747084
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4000011334895800}
-  - component: {fileID: 33000013403861896}
-  - component: {fileID: 23000014158224576}
-  - component: {fileID: 114171131733360170}
+  - component: {fileID: 4200630672077036}
+  - component: {fileID: 33855064975188062}
+  - component: {fileID: 23991486130622926}
+  - component: {fileID: 114151206865862800}
   m_Layer: 0
-  m_Name: Example_1
+  m_Name: Player Ship
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4000011334895800
+--- !u!4 &4200630672077036
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013772491214}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_GameObject: {fileID: 1946062428747084}
+  m_LocalRotation: {x: -0, y: -0.00000008940696, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -1, z: 6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23000014158224576
+--- !u!23 &23991486130622926
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013772491214}
+  m_GameObject: {fileID: 1946062428747084}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -76,25 +76,29 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33000013403861896
+--- !u!33 &33855064975188062
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013772491214}
+  m_GameObject: {fileID: 1946062428747084}
   m_Mesh: {fileID: 4300008, guid: 6c11e79470dad4b4bb66b279d2660007, type: 3}
---- !u!114 &114171131733360170
+--- !u!114 &114151206865862800
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013772491214}
+  m_GameObject: {fileID: 1946062428747084}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 096a59f7a7ab3f3479702c8f76080dff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xSpeed: 10
-  ySpeed: 10
+  xSpeed: 20
+  ySpeed: 20
   xRange: 5
   yRange: 3
+  positionPitchFactor: -5
+  controlPitchFactor: -20
+  positionYawFactor: -5
+  controlRollFactor: -20
