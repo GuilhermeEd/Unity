@@ -14,10 +14,10 @@ public class Player : MonoBehaviour {
 
 	float xThrow, yThrow;
 
-	void Start () {
-		
+	void OnTriggerEnter (Collider collider) {
+		Debug.Log("Player triggered something.");
 	}
-	
+
 	void Update ()
   {
     ProcessTranslation ();
