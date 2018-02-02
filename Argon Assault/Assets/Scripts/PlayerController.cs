@@ -1,28 +1,36 @@
 ﻿using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
-public class Player : MonoBehaviour {
+public class PlayerController : MonoBehaviour {
 
+	[Header("General")]
 	[Tooltip("In ms^-1")] [SerializeField] float xSpeed = 20f;
 	[Tooltip("In ms^-1")] [SerializeField] float ySpeed = 20f;
 	[Tooltip("In m")] [SerializeField] float xRange = 5f;
 	[Tooltip("In m")] [SerializeField] float yRange = 3f;
+
+	[Header("Screen-position Based")]
 	[SerializeField] float positionPitchFactor = -5f;
-	[SerializeField] float controlPitchFactor = -20f;
 	[SerializeField] float positionYawFactor = 5f;
+
+	[Header("Control-throw Based")]
+	[SerializeField] float controlPitchFactor = -20f;
 	[SerializeField] float controlRollFactor = -20f;
 
 	float xThrow, yThrow;
-
-	void OnTriggerEnter (Collider collider) {
-		Debug.Log("Player triggered something.");
-	}
+	bool isControlEnabled = true;
 
 	void Update ()
   {
-    ProcessTranslation ();
-		ProcessRotation ();
+		if ( isControlEnabled ) {
+    	ProcessTranslation ();
+			ProcessRotation ();
+		}
   }
+
+	void OnPlayerDeath () { // called by string reference
+		isControlEnabled = false;
+	}
 
   void ProcessTranslation () {
     xThrow = CrossPlatformInputManager.GetAxis("Horizontal");
