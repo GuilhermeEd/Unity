@@ -151,6 +151,7 @@ GameObject:
   - component: {fileID: 66914729}
   - component: {fileID: 66914731}
   - component: {fileID: 66914730}
+  - component: {fileID: 66914732}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -215,6 +216,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 66914728}
+--- !u!114 &66914732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 66914728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10149252e64fb8a4c868e4a5d61ed8e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &70494149
 GameObject:
   m_ObjectHideFlags: 0
@@ -271,6 +283,16 @@ Transform:
   m_Father: {fileID: 1639170772}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &145756979 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1757996978959750, guid: 1074824b51d8ff14f97aa52c849d1a56,
+    type: 2}
+  m_PrefabInternal: {fileID: 1967259969}
+--- !u!1 &192168452 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1122327941328458, guid: 1074824b51d8ff14f97aa52c849d1a56,
+    type: 2}
+  m_PrefabInternal: {fileID: 1967259969}
 --- !u!1001 &248075435
 Prefab:
   m_ObjectHideFlags: 0
@@ -359,6 +381,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathFX: {fileID: 1787317899157990, guid: 4d04111ae225075438ee9b313404246e, type: 2}
   parent: {fileID: 70494150}
+  scorePetHit: 12
 --- !u!1001 &357715890
 Prefab:
   m_ObjectHideFlags: 0
@@ -429,6 +452,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathFX: {fileID: 1787317899157990, guid: 4d04111ae225075438ee9b313404246e, type: 2}
   parent: {fileID: 70494150}
+  scorePetHit: 12
 --- !u!1001 &480992817
 Prefab:
   m_ObjectHideFlags: 0
@@ -489,6 +513,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathFX: {fileID: 1787317899157990, guid: 4d04111ae225075438ee9b313404246e, type: 2}
   parent: {fileID: 70494150}
+  scorePetHit: 12
 --- !u!4 &694606390 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4103799281426532, guid: faccf2ed857db394a9e97c76340d5eb8,
@@ -680,10 +705,10 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -983,6 +1008,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathFX: {fileID: 1787317899157990, guid: 4d04111ae225075438ee9b313404246e, type: 2}
   parent: {fileID: 70494150}
+  scorePetHit: 12
 --- !u!1 &1536173305
 GameObject:
   m_ObjectHideFlags: 0
@@ -1230,6 +1256,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathFX: {fileID: 1787317899157990, guid: 4d04111ae225075438ee9b313404246e, type: 2}
   parent: {fileID: 70494150}
+  scorePetHit: 12
 --- !u!4 &1880991080 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4200630672077036, guid: 1074824b51d8ff14f97aa52c849d1a56,
@@ -1344,6 +1371,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1918426744}
     m_Modifications:
+    - target: {fileID: 114073401006838260, guid: 1074824b51d8ff14f97aa52c849d1a56,
+        type: 2}
+      propertyPath: guns.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4200630672077036, guid: 1074824b51d8ff14f97aa52c849d1a56, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1376,6 +1408,24 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1122327941328458, guid: 1074824b51d8ff14f97aa52c849d1a56, type: 2}
+      propertyPath: m_Name
+      value: Gun Left
+      objectReference: {fileID: 0}
+    - target: {fileID: 1757996978959750, guid: 1074824b51d8ff14f97aa52c849d1a56, type: 2}
+      propertyPath: m_Name
+      value: Gun Right
+      objectReference: {fileID: 0}
+    - target: {fileID: 114073401006838260, guid: 1074824b51d8ff14f97aa52c849d1a56,
+        type: 2}
+      propertyPath: guns.Array.data[0]
+      value: 
+      objectReference: {fileID: 192168452}
+    - target: {fileID: 114073401006838260, guid: 1074824b51d8ff14f97aa52c849d1a56,
+        type: 2}
+      propertyPath: guns.Array.data[1]
+      value: 
+      objectReference: {fileID: 145756979}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1074824b51d8ff14f97aa52c849d1a56, type: 2}
   m_IsPrefabParent: 0
