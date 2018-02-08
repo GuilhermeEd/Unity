@@ -14,12 +14,12 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 8
-  m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  m_FogMode: 3
+  m_Fog: 1
+  m_FogColor: {r: 0.16176468, g: 0.16176468, b: 0.16176468, a: 0.353}
+  m_FogMode: 1
   m_FogDensity: 0.01
-  m_LinearFogStart: 0
-  m_LinearFogEnd: 300
+  m_LinearFogStart: 1
+  m_LinearFogEnd: 700
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
@@ -541,16 +541,6 @@ PlayableDirector:
     value: {fileID: 714081304}
   m_ExposedReferences:
     m_References: []
---- !u!1 &145756979 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1757996978959750, guid: 1074824b51d8ff14f97aa52c849d1a56,
-    type: 2}
-  m_PrefabInternal: {fileID: 1967259969}
---- !u!1 &192168452 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1122327941328458, guid: 1074824b51d8ff14f97aa52c849d1a56,
-    type: 2}
-  m_PrefabInternal: {fileID: 1967259969}
 --- !u!1001 &248075435
 Prefab:
   m_ObjectHideFlags: 0
@@ -572,19 +562,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4584862014053908, guid: d5d53da39acd84142bbb2256abb741a5, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0.6554868
+      value: 0.61751866
       objectReference: {fileID: 0}
     - target: {fileID: 4584862014053908, guid: d5d53da39acd84142bbb2256abb741a5, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.27053013
+      value: 0.15854283
       objectReference: {fileID: 0}
     - target: {fileID: 4584862014053908, guid: d5d53da39acd84142bbb2256abb741a5, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0.23612705
+      value: -0.118075065
       objectReference: {fileID: 0}
     - target: {fileID: 4584862014053908, guid: d5d53da39acd84142bbb2256abb741a5, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.66437536
+      value: 0.7613102
       objectReference: {fileID: 0}
     - target: {fileID: 4584862014053908, guid: d5d53da39acd84142bbb2256abb741a5, type: 2}
       propertyPath: m_RootOrder
@@ -592,15 +582,30 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4584862014053908, guid: d5d53da39acd84142bbb2256abb741a5, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 87.121
+      value: 77.874
       objectReference: {fileID: 0}
     - target: {fileID: 4584862014053908, guid: d5d53da39acd84142bbb2256abb741a5, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 96.51401
+      value: 27.062002
       objectReference: {fileID: 0}
     - target: {fileID: 4584862014053908, guid: d5d53da39acd84142bbb2256abb741a5, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 54.513004
+      value: 4.374
+      objectReference: {fileID: 0}
+    - target: {fileID: 108069228561608068, guid: d5d53da39acd84142bbb2256abb741a5,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 108069228561608068, guid: d5d53da39acd84142bbb2256abb741a5,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0.7941176
+      objectReference: {fileID: 0}
+    - target: {fileID: 108069228561608068, guid: d5d53da39acd84142bbb2256abb741a5,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0.7941176
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d5d53da39acd84142bbb2256abb741a5, type: 2}
@@ -1508,11 +1513,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1918426744}
     m_Modifications:
-    - target: {fileID: 114073401006838260, guid: 1074824b51d8ff14f97aa52c849d1a56,
-        type: 2}
-      propertyPath: guns.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4200630672077036, guid: 1074824b51d8ff14f97aa52c849d1a56, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1545,24 +1545,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1122327941328458, guid: 1074824b51d8ff14f97aa52c849d1a56, type: 2}
-      propertyPath: m_Name
-      value: Gun Left
-      objectReference: {fileID: 0}
-    - target: {fileID: 1757996978959750, guid: 1074824b51d8ff14f97aa52c849d1a56, type: 2}
-      propertyPath: m_Name
-      value: Gun Right
-      objectReference: {fileID: 0}
-    - target: {fileID: 114073401006838260, guid: 1074824b51d8ff14f97aa52c849d1a56,
-        type: 2}
-      propertyPath: guns.Array.data[0]
-      value: 
-      objectReference: {fileID: 192168452}
-    - target: {fileID: 114073401006838260, guid: 1074824b51d8ff14f97aa52c849d1a56,
-        type: 2}
-      propertyPath: guns.Array.data[1]
-      value: 
-      objectReference: {fileID: 145756979}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1074824b51d8ff14f97aa52c849d1a56, type: 2}
   m_IsPrefabParent: 0
