@@ -66,21 +66,16 @@ public class PlayerController : MonoBehaviour {
 
 	void ProcessFiring () {
 		if ( CrossPlatformInputManager.GetButton("Fire") ) {
-			ActivateGuns ();
+			SetGunsActive (true);
 		} else {
-			DeactivateGuns ();
+			SetGunsActive (false);
 		}
 	}
 
-	void ActivateGuns () {
-		foreach ( GameObject gun in guns ) {
-			gun.SetActive(true);
-		}
-	}
-
-	void DeactivateGuns () {
-		foreach ( GameObject gun in guns ) {
-			gun.SetActive(false);
+	void SetGunsActive (bool isActive) {
+		foreach ( GameObject gun in guns ) { // care may affect death FX
+			var emissionModule = gun.GetComponent<ParticleSystem>().emission;
+			emissionModule.enabled = isActive;
 		}
 	}
 
