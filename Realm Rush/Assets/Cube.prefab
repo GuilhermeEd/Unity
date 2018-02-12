@@ -127,6 +127,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4962876287989028}
   - component: {fileID: 114673842505265262}
+  - component: {fileID: 114949360242266428}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -252,7 +253,7 @@ Transform:
   m_GameObject: {fileID: 1573403176561698}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalScale: {x: 9, y: 9, z: 9}
   m_Children:
   - {fileID: 4118465179932174}
   - {fileID: 4864379217799228}
@@ -660,3 +661,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridSize: 10
+--- !u!114 &114949360242266428
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1573403176561698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a22efec0d5ad8964fa8465ccd8a8c002, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
