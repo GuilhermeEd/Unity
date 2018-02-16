@@ -21,7 +21,7 @@ public class PathFinder : MonoBehaviour {
 		LoadBlocks ();
 		ColorStartAndEnd ();
 		PathFind ();
-		ExploreNeighbours ();
+		// ExploreNeighbours ();
 	}
 	
 	void LoadBlocks () {
@@ -44,19 +44,22 @@ public class PathFinder : MonoBehaviour {
 	void PathFind () {
 		queue.Enqueue(startWaypoint);
 		
-		while ( queue.Count > 0 ) {
+		while ( queue.Count > 0 && isRunning ) {
 			Waypoint searchCenter = queue.Dequeue();
 			HaltIfEndFound(searchCenter);
+			ExploreNeighbours(searchCenter);
+			searchCenter.isExplored = true;
 		}
 
 		Debug.Log("Path Finding Done");
 	}
 
-	void ExploreNeighbours () {
+	void ExploreNeighbours (Waypoint from) {
+		if (!isRunning) { return; }
 		foreach ( Vector2Int direction in directions ) {
-			Vector2Int explorationCoordinates = startWaypoint.GetGridPos() + direction;
-			if (grid.ContainsKey(explorationCoordinates)){
-				grid[explorationCoordinates].SetTopColor(Color.blue);
+			Vector2Int neighbourCoordinates = from.GetGridPos() + direction;
+			if (grid.ContainsKey(neighbourCoordinates)){
+				QueueNewNeighbours (neighbourCoordinates);
 			}				
 		}
 	}
@@ -65,6 +68,14 @@ public class PathFinder : MonoBehaviour {
 		if ( searchCenter == endWaypoint ) {
 			Debug.Log("HaltIfEndFound");
 			isRunning = false;
+		}
+	}
+
+	void QueueNewNeighbours (Vector2Int neighbourCoordinates) {
+		Waypoint neighbour = grid[neighbourCoordinates];
+		if (!neighbour.isExplored) {
+			neighbour.SetTopColor(Color.blue);
+			queue.Enqueue(neighbour);
 		}
 	}
 
